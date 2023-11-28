@@ -29,16 +29,11 @@ function closePopup() {
 function submitLoginForm(event) {
 	event.preventDefault();
 
-	// 여기에 로그인 처리 로직을 추가하세요.
 	var username = document.getElementById("username").value;
 	var password = document.getElementById("password").value;
 
-	// 간단한 예제: 입력 받은 정보를 콘솔에 출력
 	console.log("사용자 이름:", username);
 	console.log("비밀번호:", password);
 
-	// 로그인 처리 로직을 여기에 추가하세요.
-
-	// 로그인 성공 시 팝업을 닫을 수 있습니다.
 	closePopup();
 }
