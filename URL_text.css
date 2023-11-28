@@ -1,0 +1,262 @@
+html, body, footer {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background-color:ivory;
+	
+}
+
+footer{
+	margin-top:5%;
+}
+
+
+.fi{
+	font-size:50px;
+	margin:auto;
+}
+
+
+.main{
+	width: 100%;
+	height: 2%;
+	display:flex;
+	align-items: center;
+	background-color:ivory;
+}
+
+nav{
+	width:100%;
+	height:8%;
+	background-color:LightSkyBlue;
+}
+
+.menu-content {
+	display: none;
+	position: absolute;
+	top: 10%;
+	left: 0px; /* 아이콘 옆에 위치하도록 조정 */
+	width: 30vm; /* 메뉴 너비 설정 */
+	height:50%;
+	background: #f0f0f0;
+	padding: 10px;
+	border: 1px solid #ccc;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-content a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+
+
+.main_menu{
+	color:white;
+	width:90%;
+	height:100%;
+	display:flex;
+	justify-content: space-between;
+	align-items: center; 
+	margin-left:5%;
+	margin-right:5%;
+}
+
+.main_menu > div {
+	font-size:15px;
+	font-weight:bold;	
+	display:flex;
+	text-align:center;
+	align-items: center;
+}
+
+.popup{
+	color:black;
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	z-index: 999;
+}
+
+        /* 배경 뒷부분에 어두운 레이어를 만들기 위한 스타일 */
+				
+				
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* 어두운 레이어의 색상 및 투명도 조절 */
+	justify-content: center;
+	align-items: center;
+	z-index: 998;
+}
+
+
+.login_form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+section{
+	width:100%;
+	height:50%;
+	background-color:LightSkyBlue;
+}
+
+
+article{
+	display: flex;
+	margin:auto;
+	width:70%;
+	height:100%;
+	background-color:LightSkyBlue;
+	align-items: center;
+	flex-direction: column;
+}
+
+.welcome{
+	width:60%;
+	height:20%;
+	margin:10% 20% 0% 20%;
+  flex-direction: column;
+	display: flex;
+	text-align:center;
+	color:white;
+}
+
+.welcome_main{
+	font-size:40px;
+}
+
+.welcome_detail{
+	margin-top:3%;
+	font-size:30px;
+	opacity: 0.7;
+}
+
+.generate_URL{
+	width:70%;
+	height:12%;
+	margin:5% 10% 2% 10%;
+	display:flex;
+	text-align:center;
+	align-items: center;
+}
+
+.change_button{
+	width:10%;
+	height:110%;
+	
+}
+
+#InputURL{
+   width:90%;
+   height:100%;
+	 font-size:20px;
+}
+
+#URL_div{
+	display:none;
+	width:70%;
+    height:12%;
+	margin:0% 10% 2% 10%;
+}
+
+
+.URL_div{
+	width:100%;
+	height:100%;
+	display:flex;
+	text-align:center;
+}
+
+#changed_URL{
+	width:90%;
+	height:100%;
+	font-size:20px;
+	background-color:white;
+	display:flex;
+	text-align:center;
+	align-items:center;
+}
+
+.changed_URL_div{
+	font-size:20px;
+	display:flex;
+	align-items:center;
+	margin-left:20px;
+
+}
+
+#copy_button{
+	width:10%;
+	height:100%;
+}
+
+.copy_button{
+	width:100%;
+	height:100%;
+}
+
+.explain_grid {
+	display: grid;
+	width:60%;
+	margin:auto;
+	margin-top:3%;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 50px; /* 그리드 간격 설정 */
+}
+
+.grid_item {
+	display:flex;
+	padding:20%;
+	text-align:center;
+	border: 1px solid #ccc;	
+	align-items:center;
+	flex-direction:column;
+	background-color:#F5F5DC;
+}
+
+#grid_main_text{
+	font-weight:bold;
+	font-size:30px;
+}
+
+#grid_explain_text{
+	font-size:20px;
+}
+
+
+.explain_grid{
+}
+
+.horizontal-line {
+	border-top: 1px solid #000;
+	margin: 20px 0; /* 원하는 여백 설정 */
+}
+
+
+.bottom{
+	margin-top:5%;
+	margin-bottom:5%;
+	height:10%;
+	text-align:center;
+	font-size:30px;
+}
+
+
+        

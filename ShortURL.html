@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="URL_text.css">
+		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+		<title>Short URL</title>
+		<script src="URL.js"></script>
+	</head>
+<!--css파일 로드 및 icon파일 로드-->
+	
+<body>
+	<div class = "main">
+	</div>
+	<nav>
+		<div class="main_menu">
+			<div></div>
+			<div>메인 홈페이지 이름</div>
+			<div></div><div></div><div></div><div></div><div></div><div></div>
+			<div></div>
+			<div></div>
+			<div>회원가입</div>
+			<div onclick="openPopup()()">로그인</div>
+			<!--메뉴바 구현, 메인 웹사이트 아이콘과 회원가입, 로그인 기능 구현 팝업된 창을 통해 로그인-->
+				<div class="overlay" id="overlay" onclick="closePopup()"></div>
+				<div class="popup" id="popup">
+				<!--login form-->
+					<h2>로그인</h2>
+					<form class="login_form" onsubmit="submitLoginForm(event)">
+						<label for="username">사용자 이름:</label>
+						<input type="text" id="username" name="username" required>
+						<label for="password">비밀번호:</label>
+						<input type="password" id="password" name="password" required>
+						<button type="submit">로그인</button>
+					</form>
+				<button onclick="closePopup()">닫기</button>
+				</div>
+			<!--menu -> 마우스 호버를 통한 기능 선택(단축 URL, QR코드 생성, HWP to PDF, 간단한 메모 작성 가능한 일정표-->
+			<!--home - 메인 아이콘 표현 및 누를 경우 메인 페이지로 이동, user - 로그인 및 회원가입 가능한 창 팝업-->
+			<!--menu 삭제 => 시간과 기능상 넣을 수 없다고 판단-->
+			<!--11.26: 아이콘 -> 텍스트로 변경, 관리 및 기능적으로 텍스트로 일괄 통일하는 쪽이 디자인적으로 더 나아보인다.-->
+		</div>
+	</nav>
+<!--nav에 menu와 로그인 기능 구현. 고민중인 것은 아이콘으로 대체할 것인지?.-->
+	<section>
+		<article>
+			<div class="welcome">
+			<div class="welcome_main">단축 URL 링크 주소 줄이기</div>
+			<div class="welcome_detail">긴 링크 주소를 짧게 줄여주는 단축 서비스</div>
+			</div>
+			<div class="generate_URL">
+			  <label for="InputURL"></label>
+				<input type="text" id="InputURL" name="InputURL" placeholder="   긴 URL 붙여넣기">
+				<button class="change_button" onclick="toggleVisibility()">URL 단축</button>
+			</div>
+			<div id="URL_div">
+				<div class="URL_div">
+					<div id="changed_URL">
+						<div class="changed_URL_div">이 곳은 변경된 URL이 나타날 공간</div>
+					</div>
+					<div id="copy_button"><button class="copy_button">복사하기</button></div>
+				</div>
+			</div>
+
+		</article>
+<!--URL change 및 단축된 도메인 출력 창 표현-->
+	</section>
+	<!--페이지 세부사항 설명-->
+	<footer>
+		<div class="explain_grid">
+			<div class="grid_item"><div class="grid_icon">icon_1</div><p id="grid_main_text">쉽고 간단</p><p id="gird_explain_text">URL만 넣으면 간단한 단축 URL이 생성됩니다.</p></div>
+			<div class="grid_item"><div class="grid_icon">icon_1</div><p id="grid_main_text">기록</p><p id="gird_explain_text">로그인을 통해 변환한 URL을 저장할 수 있습니다.</p></div>
+			<div class="grid_item"><div class="grid_icon">icon_1</div><p id="grid_main_text">QR코드</p><p id="gird_explain_text">단축 URL과 함께 QR코드를 생성합니다.</p></div>
+			<div class="grid_item"><div class="grid_icon">icon_1</div><p id="grid_main_text">쉽고 간단</p><p id="gird_explain_text">URL만 넣으면 간단한 단축 URL이 생성됩니다.</p></div>
+		</div>
+	</footer>
+	<div class="horizontal-line"></div>
+	<div class="bottom">
+		사이트 이름 © 단축 URL 서비스 All rights reserved.
+	</div>
+</body>
+</html>
