@@ -4,7 +4,6 @@ html, body, footer {
 	width: 100%;
 	height: 100%;
 	background-color:ivory;
-	
 }
 
 footer{
@@ -87,7 +86,6 @@ nav{
 	z-index: 999;
 }
 
-/* 배경 뒷부분에 어두운 레이어를 만들기 위한 스타일 */
 				
 				
 .overlay {
@@ -195,9 +193,10 @@ article{
 
 .changed_URL_div{
 	font-size:20px;
-	display:flex;
+	display:hidden;
 	align-items:center;
 	margin-left:20px;
+	
 
 }
 
@@ -218,7 +217,7 @@ article{
 	margin-top:3%;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, 1fr);
-	gap: 50px; /* 그리드 간격 설정 */
+	gap: 50px; 
 }
 
 .grid_item {
@@ -246,7 +245,7 @@ article{
 
 .horizontal-line {
 	border-top: 1px solid #000;
-	margin: 20px 0; /* 여백 설정 */
+	margin: 20px 0; 
 }
 
 
@@ -286,11 +285,10 @@ article{
 }
 
 .item-orignal {
-	
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	max-width: 100px; /* 텍스트의 최대 너비 설정 */
+	max-width: 100px;
 	width:35%;
 }
 
@@ -306,12 +304,10 @@ article{
 	width:5%;
 }
 
-
-
 .history_table td {
 	
-	white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
-  overflow: hidden; /* 넘치는 부분을 숨김 처리 */
+	white-space: nowrap;
+  overflow: hidden; 
   text-overflow: ellipsis;
 }
 
