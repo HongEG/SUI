@@ -1,14 +1,4 @@
-/*로그인 팝업 기능을 위한 오버레이 및 설정*/
-/* 로그인 기능 삭제에 의한 코드 비활성화 
-function toggleVisibility() {
-	var div = document.getElementById("URL_div");
-  if (div.style.display === "none") {
-    div.style.display = "block";
-  }else{
-		div.style.display = "none";
-  }
-}
-*/
+
 function login_button_click(){
 	alert("버튼");
 }
@@ -76,6 +66,7 @@ function getOriginalUrl(shortUrl) {
 }
 
 function shortenUrl() {
+	/*코드 변경에 따른 비활성화
 	var div = document.getElementById("URL_div");
 		
 	if (div.style.display === "none") {
@@ -83,6 +74,7 @@ function shortenUrl() {
 	}else{
 		div.style.display = "none";
 	}
+	*/
 		const originalUrlInput = document.getElementById('originalUrl');
 		const shortUrlDisplay = document.getElementById('shortUrl');
 		const originalResultDisplay = document.getElementById('originalResult');
@@ -162,23 +154,89 @@ function addItem() {
 	itemButtonsCell.classList.add('item-buttons');
 	const deleteButtonsCell = document.createElement('td');
 	deleteButtonsCell.classList.add('delete-buttons');
-
+	const QRButtonsCell = document.createElement('td');
+	QRButtonsCell.classList.add('qr-buttons');
+	
+	/*동적할당 및 '복사' 버튼 제작 */
 	const button1 = document.createElement('button');
 	button1.classList.add('item-button');
-	button1.textContent = '복사';
+	button1.textContent = '복사';  
+	button1.addEventListener('click', function () {
+    copyTextToClipboard(itemTextCell.textContent);
+  });
 	itemButtonsCell.appendChild(button1);
 	
+	/*동적할당-> 행이 추가되어도 코드가 작동할 수 있도록 하는 코드*/
 	const button2 = document.createElement('button');
 	button2.classList.add('delete-button');
 	button2.textContent = '삭제';
+	button2.addEventListener('click', function () {
+    deleteRow(this);
+  });
 	deleteButtonsCell.appendChild(button2);
 
+	/*동적할당 및 'QR코드 변환' 버튼 제작 */
+	const button3 = document.createElement('button');
+	button3.classList.add('qr-button');
+	button3.textContent = 'QR변환';
+	button3.addEventListener('click', function () {
+		// QR 코드 생성 팝업 창 열기
+		openQRWindow(itemTextCell.textContent);
+	});
+	QRButtonsCell.appendChild(button3);
+		
 	newRow.appendChild(itemDateCell);
 	newRow.appendChild(itemNumberCell);
 	newRow.appendChild(itemOrignalCell);
 	newRow.appendChild(itemTextCell);
 	newRow.appendChild(itemButtonsCell);
 	newRow.appendChild(deleteButtonsCell);
+	newRow.appendChild(QRButtonsCell);
 
 	historyTableBody.appendChild(newRow);
+}
+
+
+function deleteRow(button) {
+	// 버튼이 속한 행을 찾아 삭제
+	var row = button.parentNode.parentNode;
+	row.parentNode.removeChild(row);
+};
+
+
+// '복사' 버튼 클릭 시 텍스트를 클립보드에 복사하는 함수
+function copyTextToClipboard(text) {
+navigator.clipboard.writeText(text)
+	.then(() => {
+		console.log('텍스트가 성공적으로 클립보드에 복사되었습니다.');
+		alert('텍스트가 클립보드에 복사되었습니다.');
+	})
+	.catch(err => {
+		console.error('클립보드 복사 실패:', err);
+		alert('텍스트를 클립보드에 복사하는 데 실패했습니다.');
+	});
+}
+
+
+
+function openQRWindow(text) {
+  const qrWindow = window.open('', '_blank', 'width=300,height=300');
+  
+  // QR 코드 생성 및 표시 로직 추가
+  const qrCodeContainer = document.createElement('div');
+  qrWindow.document.body.appendChild(qrCodeContainer);
+
+  generateQRCode(text, qrCodeContainer);
+
+}
+
+
+function generateQRCode(text, container) {
+  // QR 코드 생성 로직을 추가
+	
+  const qrcode = new QRCode(container, {
+    text: text,
+    width: 200,
+    height: 200
+  });
 }
